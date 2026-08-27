@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>React App</title>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <!-- react link -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+     <!-- react-dom link -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <!-- babel link -->
+</head>
+
+
+<body>
+    <div id="mydiv">
+
+    </div>
+
+    <script type="text/babel"> 
+
+    function Test()  /*Test is a function*/
+    {
+         const bla=()=>{alert("Hello React")}  /* bla is a function that store without name function. inside the function has alert Message*/
+        return <button onClick={bla}>Click Me</button> 
+        // return button that have one click event. if click on button then occure alert Message
+    }
+
+
+    class Hello extends React.Component{    
+
+        // Hello is a function that inherite component of React
+
+        render()
+        {
+          return <div>Hello React with code <Test /></div>  
+        }
+
+        // render is a function that display element
+    }
+    ReactDOM.render(<Hello />,document.getElementById('mydiv')) 
+
+    // use for connect react dom first parameter is class name second parameter is html containeer id 
+    </script>
+</body>
+
+</html>
