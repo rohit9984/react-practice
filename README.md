@@ -65,12 +65,12 @@ npm i react@latest react-dom@latest
 In order to take advantage of React 19's concurrent features you'll need to use the new root API for client rendering.
 
 // Before
-import ReactDOM from 'react-dom';
+<!-- import ReactDOM from 'react-dom';
 
 ReactDOM.render(
   <h1>Hello React!</h1>,
   document.getElementById('root')
-);
+); -->
 
 // After
 import { createRoot } from 'react-dom/client';
@@ -114,18 +114,18 @@ appendChild() → element ko webpage ke DOM mein add kiya
 # 2. With JSX — React
 
 React mein hum directly HTML-jaisa code likh sakte hain:
-
+<!-- 
 function App() {
   return (
     <h1>Hello Rohit</h1>
   );
-}
+} -->
 
 export default App;
 
 Yahan:
-
-<h1>Hello Rohit</h1>
+<!-- 
+<h1>Hello Rohit</h1> -->
 
 ================= React JSX Expressions=============
 
@@ -136,7 +136,7 @@ A JavaScript expression is a piece of code that produces or gives a value.
 # You can insert any valid JavaScript expression inside JSX by wrapping it in curly braces { }.
 
 # Example
-
+<!-- 
 function Car() {
   return (
     <>
@@ -144,14 +144,14 @@ function Car() {
       <p>It has {218 * 1.36} horsepower</p>
     </>
   );
-}
+} -->
 
 ===================== Variable =====================
 
 # Variables are also valid expressions. Insert variables in JSX by wrapping it in curly braces { }.
 
 # Example 
-
+<!-- 
 function Car() {
   const hp = 218 * 1.36;
   return (
@@ -160,14 +160,14 @@ function Car() {
       <p>It has {hp} horsepower</p>
     </>
   );
-}
+} -->
 
 =================== Function Calls =================
 
 # Function calls are valid expressions. Insert function calls in JSX by wrapping it in curly braces { }.
 
 # Example
-
+<!-- 
 function kwtohp(kw) {
   return kw * 1.36;
 }
@@ -179,14 +179,14 @@ function Car() {
       <p>It has {kwtohp(218)} horsepower</p>
     </>
   );
-}
+} -->
 
 ==================== Object Properties =============
 
 # Access object properties within JSX:
 
 # Example
-
+<!-- 
 function Car() {
   const myobj = {
     name: "Fiat",
@@ -198,30 +198,30 @@ function Car() {
       <h1>My car is a {myobj.color} {myobj.name} {myobj.model}</h1>
     </>
   );
-}
+} -->
 
 ==================== React JSX Attributes ==========
 
 # Use attribute className instead of class in JSX:
 
 # Example 
-
+<!-- 
 function Car() {
   return (
     <h1 className="myclass">Hello World</h1>
   );
-}
+} -->
 
 # Expressions as Attributes
 
 # Example
-
+<!-- 
 function Car() {
   const x = "myclass";
   return (
     <h1 className={x}>Hello World</h1>
   );
-}
+} -->
 
 # camelCase Event Attributes
 
@@ -229,14 +229,14 @@ function Car() {
 
 # Example
 
-function Car() {
+<!-- function Car() {
   const myfunc = () => {
     alert('Hello World');
   };
   return (
     <button onClick={myfunc}>Click me</button>
   );
-}
+} -->
 
 # Boolean Attributes
 
@@ -246,20 +246,20 @@ function Car() {
 
 Boolean true in JSX, this will make the button disabled:
 
-<button onClick={myfunc} disabled>Click me</button>
+<!-- <button onClick={myfunc} disabled>Click me</button> -->
 
 Also true in JSX, this will also make the button disabled:
 
-<button onClick={myfunc} disabled={true}>Click me</button>
+<!-- <button onClick={myfunc} disabled={true}>Click me</button> -->
 
 False in JSX, this will NOT make the button disabled:
-
-<button onClick={myfunc} disabled={false}>Click me</button>
+<!-- 
+<button onClick={myfunc} disabled={false}>Click me</button> -->
 
 ============ The style Attribute =====
 
 # The style attribute in JSX only accepts a JavaScript object with camelCased CSS property names, rather than a CSS string (as in HTML).
-
+<!-- 
 function Car() {
   const mystyles = {
     color: "red",
@@ -272,7 +272,7 @@ function Car() {
       <h1 style={mystyles}>My car</h1>
     </>
   );
-}
+} -->
 
 # Notice
 
@@ -293,7 +293,7 @@ To be able to use conditional statements in JSX, you should put the if statement
 Write "Banana" if x is less than 10, otherwise "Apple":
 
 # Option 1
-
+<!-- 
 function Fruit() {
   const x = 5;
   let y = "Apple";
@@ -304,7 +304,7 @@ function Fruit() {
   return (
     <h1>{y}</h1>
   );
-}
+} -->
 
 # Option 2:
 Use ternary expressions instead:
@@ -312,9 +312,9 @@ Use ternary expressions instead:
 # Example
 Write "Banana" if x is less than 10, otherwise "Apple":
 
-function Fruit() {
+<!-- function Fruit() {
   const x = 5;
   return (
     <h1>{(x) < 10 ? "Banana" : "Apple"}</h1>
   );
-}
+} -->
