@@ -799,3 +799,138 @@ onClick={handleClick()}    // ❌ Usually incorrect
 ### Easy Definition
 
 > **React Events = User ke actions ko detect karke unke according function/action perform karna.**
+
+======================= React Conditional Rendering ==================================
+
+**Conditional Rendering** ka matlab hai **condition ke according UI ko show karna**.
+
+React mein mainly ye methods use hote hain:
+
+* `if` Statement
+* Logical `&&` Operator
+* Ternary Operator
+
+---
+
+## 1. `if` Statement
+
+`if` ka use condition check karke **different UI return** karne ke liye hota hai.
+
+```jsx
+function User({ isLoggedIn }) {
+  if (isLoggedIn) {
+    return <h2>Welcome Rohit!</h2>;
+  }
+
+  return <h2>Please Login</h2>;
+}
+```
+
+```jsx
+<User isLoggedIn={true} />
+```
+
+**Output:**
+
+```text
+Welcome Rohit!
+```
+
+---
+
+## 2. Logical `&&` Operator
+
+`&&` ka use tab hota hai jab condition `true` hone par **kuch display karna ho**.
+
+```jsx
+function App() {
+  const isLoggedIn = true;
+
+  return (
+    <div>
+      {isLoggedIn && <h2>Welcome Rohit!</h2>}
+    </div>
+  );
+}
+```
+
+Agar `isLoggedIn` `true` hai → message show hoga.
+
+Agar `false` hai → kuch show nahi hoga.
+
+### Syntax
+
+```jsx
+{condition && <Element />}
+```
+
+---
+
+## 3. Ternary Operator
+
+Ternary operator ka use **condition ke basis par do options mein se ek UI show** karne ke liye hota hai.
+
+### Syntax
+
+```jsx
+condition ? valueIfTrue : valueIfFalse
+```
+
+### Example
+
+```jsx
+function App() {
+  const isLoggedIn = true;
+
+  return (
+    <h2>
+      {isLoggedIn ? "Welcome Rohit!" : "Please Login"}
+    </h2>
+  );
+}
+```
+
+Agar condition `true`:
+
+```text
+Welcome Rohit!
+```
+
+Agar condition `false`:
+
+```text
+Please Login
+```
+
+---
+
+## 🧠 Quick Revision
+
+| Method | Use                                                     |
+| ------ | ------------------------------------------------------- |
+| `if`   | Different UI return karna                               |
+| `&&`   | Condition true hone par UI show karna                   |
+| `? :`  | True/False ke according 2 options mein se ek show karna |
+
+### Easy Trick
+
+```text
+if       → condition check → return UI
+&&       → true → show UI
+ternary  → true/false → one of two UI
+```
+
+
++++++++++++++++ Routing ++++++++++++++++++++++
+
+Routing Setup
+
+What is the Routing
+
+# Routing is the processe in which we convert every component into web pages by making link
+
+Routing Setup
+
+npm install react-router-dom
+
+https://v5.reactrouter.com/web/example/basic

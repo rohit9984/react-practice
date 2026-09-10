@@ -1,6 +1,3 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import React, {useState} from 'react'
 
@@ -35,6 +32,7 @@ function getFormData(e)
         <input type="checkbox" onChange = {(e) => setTnc(e.target.checked)}/> <span>Accept Term And Conditions</span>
         <br /><br />
         <button type='submit'>Submit</button>
+        
 
       </form>
     </div>

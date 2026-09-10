@@ -1,7 +1,7 @@
 import {useState} from 'react'
 function Profile(){
     
-    const [loggedIn, setLoggedIn] = useState(2)
+    const [loggedIn, setLoggedIn] = useState(1)
 return(
     <div>
         {/* {loggedIn?<h1>Right</h1>:<h1>Welcome</h1>} */}
