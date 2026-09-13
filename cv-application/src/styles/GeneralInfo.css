@@ -1,0 +1,43 @@
+/* src/styles/GeneralInfo.css */
+
+.general-info {
+  border-left-color: #2563eb; /* Royal Blue Accent */
+  transition: box-shadow 0.3s ease;
+}
+
+.general-info:hover {
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08);
+}
+
+/* Display Mode Styling */
+.general-info .info-display {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.general-info .display-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.general-info .contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.general-info .contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.general-info .contact-item strong {
+  color: #1e293b;
+}

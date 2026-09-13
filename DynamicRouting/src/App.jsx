@@ -25,9 +25,15 @@ function App() {
 
       {users.map((item) => (
         <div key={item.id}>
+          {/* har user ke liye link banata hai ye link ke liye id return karrta hai jaise item.id ke liye 1,2,3 etc */}
+
           <Link to={"/user/" + item.id + "/"+ item.name}>
             <h3>{item.name}</h3>
           </Link>
+
+            {/* <Link>React Router ka component hai, jo page ko full reload kiye bina URL change karta hai.reactrouter iske alava ye ek page se dusre page par le jata hai  */}
+
+
         </div>
       ))}
 

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Kumar Maurya - Resume</title>
+  <style>
+    /* Reset & Base Typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #1a1a1a;
+      line-height: 1.5;
+      padding: 30px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Print / Action Button Bar (Hidden when printing) */
+    .action-bar {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #0b57d0;
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    .btn:hover {
+      background-color: #0842a0;
+      transform: translateY(-1px);
+    }
+
+    /* Resume Document Container (Standard A4 Page Ratio) */
+    .resume-page {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 800px;
+      min-height: 1050px;
+      padding: 48px 56px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+    }
+
+    /* Header Section */
+    .resume-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 26px;
+      gap: 20px;
+    }
+
+    .header-left .name {
+      font-size: 30px;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    .header-left .title {
+      font-size: 17px;
+      color: #666666;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: #222222;
+    }
+
+    .header-right a {
+      color: #0b57d0;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      word-break: break-all;
+    }
+
+    .header-right a:hover {
+      color: #0842a0;
+    }
+
+    .header-right div {
+      margin-bottom: 2px;
+    }
+
+    /* Section Headings */
+    .section {
+      margin-bottom: 22px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: #000000;
+      padding-bottom: 4px;
+      border-bottom: 1.5px solid #000000;
+      margin-bottom: 12px;
+    }
+
+    /* Career Objective Text */
+    .objective-text {
+      font-size: 13.5px;
+      color: #222222;
+      text-align: justify;
+      line-height: 1.55;
+    }
+
+    /* Educational Qualification */
+    .education-list {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .education-item {
+      margin-bottom: 12px;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 14px;
+    }
+
+    .edu-institution {
+      font-weight: 700;
+      color: #000000;
+    }
+
+    .edu-year {
+      font-weight: 700;
+      color: #000000;
+      text-align: right;
+      min-width: 60px;
+    }
+
+    .edu-sub {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    .edu-degree {
+      font-style: italic;
+      color: #333333;
+    }
+
+    .edu-percentage {
+      color: #333333;
+      text-align: right;
+    }
+
+    /* Bullet Lists */
+    .skills-list {
+      list-style-type: disc;
+      padding-left: 22px;
+    }
+
+    .skills-list li {
+      font-size: 13.5px;
+      color: #222222;
+      margin-bottom: 5px;
+      line-height: 1.45;
+    }
+
+    /* Print Media Rules */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-page {
+        box-shadow: none;
+        padding: 15mm 20mm;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: underline;
+        color: #000000 !important;
+      }
+    }
+
+    /* Mobile Responsive Layout */
+    @media screen and (max-width: 640px) {
+      body {
+        padding: 10px;
+      }
+
+      .resume-page {
+        padding: 24px 18px;
+      }
+
+      .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-right {
+        text-align: left;
+      }
+
+      .edu-header,
+      .edu-sub {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .edu-year,
+      .edu-percentage {
+        text-align: left;
+        margin-top: 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print Button (Hidden during PDF / Print export) -->
+  <div class="action-bar">
+    <button class="btn" onclick="window.print()">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z"/>
+      </svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <!-- Main Resume Content -->
+  <main class="resume-page">
+    <!-- Header -->
+    <header class="resume-header">
+      <div class="header-left">
+        <h1 class="name">Rohit Kumar Maurya</h1>
+        <div class="title">Back Office Executive</div>
+      </div>
+      <div class="header-right">
+        <div><a href="mailto:mauryarohitkumar36@gmail.com">mauryarohitkumar36@gmail.com</a></div>
+        <div><a href="tel:+919518082062" style="color: inherit; text-decoration: none;">+91 – 9518082062</a></div>
+        <div>Gurugram, Haryana</div>
+        <div><a href="https://github.com/rohit9984" target="_blank" rel="noopener noreferrer">https://github.com/rohit9984</a></div>
+        <div><a href="https://www.linkedin.com/in/rohit-kumar-maurya-1402b62a8/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/rohit-kumar-maurya-1402b62a8/</a></div>
+      </div>
+    </header>
+
+    <!-- Career Objective -->
+    <section class="section">
+      <h2 class="section-title">Career Objective</h2>
+      <p class="objective-text">
+        Detail-oriented BCA graduate with hands-on experience in data entry, data handling, internet research, and MS Office tools. Seeking a Back Office Executive role where I can contribute to smooth operational workflows, documentation, and data management while growing within a professional environment.
+      </p>
+    </section>
+
+    <!-- Educational Qualification -->
+    <section class="section">
+      <h2 class="section-title">Educational Qualification</h2>
+      <ul class="education-list">
+        <li class="education-item">
+          <div class="edu-header">
+            <span class="edu-institution">St. Andrews Institute of Technology & Management, Gurugram Haryana</span>
+            <span class="edu-year">2025</span>
+          </div>
+          <div class="edu-sub">
+            <span class="edu-degree">Bachelor of Computer Applications (BCA)</span>
+            <span class="edu-percentage">Percentage: 67%</span>
+          </div>
+        </li>
+
+        <li class="education-item">
+          <div class="edu-header">
+            <span class="edu-institution">Urmila Educational Academy, Basti, Uttar Pradesh</span>
+            <span class="edu-year">2024</span>
+          </div>
+          <div class="edu-sub">
+            <span class="edu-degree">12th (UP Board)</span>
+            <span class="edu-percentage">Percentage: 57%</span>
+          </div>
+        </li>
+
+        <li class="education-item">
+          <div class="edu-header">
+            <span class="edu-institution">Haji Noorul Hasan Memorial Inter College, Malhipur, Uttar Pradesh</span>
+            <span class="edu-year">2022</span>
+          </div>
+          <div class="edu-sub">
+            <span class="edu-degree">10th (UP Board)</span>
+            <span class="edu-percentage">Percentage: 77%</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+      <ul class="skills-list">
+        <li>MS Excel (Sorting, Filtering, Basic Formulas, Data Cleaning)</li>
+        <li>MS Word & Google Sheets</li>
+        <li>Data Collection, Validation & Verification</li>
+        <li>Attention to Detail, Time Management</li>
+        <li>Email handling and online form processing</li>
+        <li>Good verbal communication skills (Hindi & Basic English)</li>
+        <li>Attention to detail and accuracy in documentation</li>
+      </ul>
+    </section>
+
+    <!-- Technical Knowledge -->
+    <section class="section">
+      <h2 class="section-title">Technical Knowledge</h2>
+      <ul class="skills-list">
+        <li>Data Analysis (Basic)</li>
+        <li>Internet Research</li>
+        <li>Report Preparation</li>
+        <li>Familiarity with AI tools (ChatGPT, Gemini, Claude)</li>
+        <li>Email handling and online form processing</li>
+        <li>C Programming & Data Structures in C, Core Java (Basic), C++.</li>
+        <li>Frontend Web Development (HTML, CSS, JavaScript, Basics of React)</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
